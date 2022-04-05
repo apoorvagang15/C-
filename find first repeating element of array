@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+void findele(int a[],int n){
+
+	int min =-1;
+	set<int> myset;
+	for(int i=n-1;i>=0;i--){
+		if(myset.find(a[i])!=myset.end()){
+			min =i;
+		}else{
+			myset.insert(a[i]);
+		}
+	}
+	if(min!=-1){
+		cout<<"first repeating element is "<<a[min];
+	}else{
+		cout<<"no element";
+	}
+	
+}
+int main(){
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	findele(a,n);
+}
