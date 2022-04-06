@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+   int n,m,x,y;
+   cin>>n>>m>>x>>y;
+   
+   int a[n][m],b[x][y];
+   for(int i=0;i<n;i++){
+   	    for(int j=0;j<m;j++){
+   	        cin>>a[i][j];
+	    }
+   }
+   for(int i=0;i<x;i++){
+   	    for(int j=0;j<y;j++){
+   	        cin>>b[i][j];
+	    }
+   }
+   int c[n][y];
+   for(int i=0;i<n;i++){
+   	    for(int j=0;j<y;j++){
+   	    	c[i][j]=0; 
+        }
+   }
+   for(int i=0;i<n;i++){
+   	    for(int j=0;j<y;j++){
+   	    	for(int k=0;k<m;k++){
+   	    		c[i][j]+=a[i][k]*b[k][j];
+			}
+        }
+   }
+   
+   for(int i=0;i<n;i++){
+   	    for(int j=0;j<y;j++){
+   	    	cout<<c[i][j]<<" ";
+		}
+		cout<<endl;
+   }
+   return 0;
+}
